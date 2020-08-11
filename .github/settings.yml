@@ -1,0 +1,6 @@
+---
+repository:
+  description: Ansible Role for maintaining Files and Directories
+  topics: ansible, ansible-role, file, directory
+  delete_branch_on_merge: true
+  has_wiki: false
