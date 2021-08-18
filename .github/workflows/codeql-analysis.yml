@@ -6,7 +6,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "38 5 * * 2"
+    - cron: "43 2 * * 1"
 
 jobs:
   analyze:
