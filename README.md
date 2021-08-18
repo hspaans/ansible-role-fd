@@ -1,42 +1,38 @@
-Role Name
-=========
+# Role Name
 
 Maintain file and directory on a server.
 
-Requirements
-------------
+## Requirements
 
 None.
 
-Role Variables
---------------
+## Role Variables
 
 Default variables are set in `defaults/main.yml`.
 
-Dependencies
-------------
+## Dependencies
 
 No dependency on other Ansible Galaxy roles.
 
-Example Playbook
-----------------
+## Example Playbook
 
-    - hosts: servers
-      vars:
-        fd_directories:
-          - path: /srv/app01
-          - path: /srv/app02
-            owner: user01
-            group: group01
-      roles:
-        - { role: hspaans.fd, become: true }
+```yaml
+---
+- hosts: servers
+  vars:
+    fd_directories:
+      - path: /srv/app01
+      - path: /srv/app02
+        owner: user01
+        group: group01
+  roles:
+    - { role: hspaans.fd, become: true }
+```
 
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
 This role was created in 2020 by [Hans Spaans](https://github.com/hspaans).

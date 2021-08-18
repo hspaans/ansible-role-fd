@@ -3,9 +3,12 @@
 import pytest
 
 
-@pytest.mark.parametrize("pkg", ["git"])
-def test_pkg_installed(host, pkg):
-    """Test if package installed."""
-    package = host.package(pkg)
+@pytest.mark.parametrize("directory", [
+    "/srv/app01",
+    "/srv/app02"
+])
+def test_directory_present(host, directory):
+    """Test if directory is present."""
+    item = host.file(directory)
 
-    assert package.is_installed
+    assert item.is_directory
