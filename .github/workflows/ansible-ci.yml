@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Ansible Role CI
 
 on:
   pull_request:
@@ -14,33 +14,35 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v2
 
-      - name: Lint Code Base
-        uses: github/super-linter@v4.8.5
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_PYTHON_BLACK: false
 
   molecule:
-    needs: lint
     name: Molecule
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out the codebase
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v2
 
       - name: Set up Python 3
-        uses: actions/setup-python@v2.3.1
+        uses: actions/setup-python@v2
         with:
-          python-version: "3.x"
+          python-version: "3.9"
 
-      - name: Install Tox
+      - name: Install dependencies
         run: |
-          pip3 install tox
+          python -m pip install --upgrade pip
+          pip install tox
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
 
-      - name: Run Molecule tests
+      - name: Test with Molecule
         run: tox
         env:
           PY_COLORS: "1"
