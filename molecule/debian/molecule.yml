@@ -1,0 +1,38 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint: |
+  set -e
+  yamllint `git ls-files '*.yaml' '*.yml'`
+  flake8
+platforms:
+  - name: debian-10
+    image: "ghcr.io/hspaans/molecule-container-debian:10"
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+  - name: debian-11
+    image: "ghcr.io/hspaans/molecule-container-debian:11"
+    command: ""
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../resources/playbooks/converge.yml
+    prepare: ../resources/playbooks/prepare.yml
+  inventory:
+    group_vars:
+      all:
+        fd_directories:
+          - path: /srv/app01
+          - path: /srv/app02
+verifier:
+  name: testinfra
+  directory: ../resources/tests/
