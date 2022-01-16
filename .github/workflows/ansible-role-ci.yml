@@ -13,7 +13,4 @@ on:
 
 jobs:
   reusable-workflow:
-    runs-on: ubuntu-latest
-    name: Reusable Workflow
-    steps:
-      - uses: hspaans/.github/workflows/ansible-role-ci.yml@master
+    uses: hspaans/.github/workflows/ansible-role-ci.yml@master
