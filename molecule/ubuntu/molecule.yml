@@ -22,7 +22,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
-  - name: ubuntu-20.04
+  - name: ubuntu-22.04
     image: "ghcr.io/hspaans/molecule-container-ubuntu:22.04"
     command: ""
     volumes:
