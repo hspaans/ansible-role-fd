@@ -13,4 +13,4 @@ jobs:
     name: Ansible Role Release
     uses: hspaans/.github/.github/workflows/ansible-role-release.yml@master
     with:
-      access_token: ${{ secrets.galaxy_api_key }}
+      access_token: ${{ secrets.GALAXY_API_KEY }}
