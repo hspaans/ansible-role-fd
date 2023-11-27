@@ -5,8 +5,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/ansible:2": {},
     "ghcr.io/devcontainers-contrib/features/flake8:2": {},
-    "ghcr.io/devcontainers-contrib/features/yamllint:2": {},
-    "ghcr.io/devcontainers-contrib/features/pyinfra:2": {}
+    "ghcr.io/devcontainers-contrib/features/yamllint:2": {}
   },
   "customizations": {
     "vscode": {
@@ -16,8 +15,14 @@
         "ms-python.flake8",
         "redhat.ansible",
         "redhat.vscode-yaml"
-      ]
+      ],
+      "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.formatOnSave": true
+      },
+      "ansible.python.interpreterPath": "/usr/local/bin/python",
+      "python.formatting.provider": "none"
     }
   },
-  "postCreateCommand": "pip install ansible-lint"
+  "postCreateCommand": "pip install -r requirements.txt"
 }
