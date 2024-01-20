@@ -13,6 +13,15 @@ lint: |
   flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
 platforms:
+  - name: amazonlinux-2023
+    image: "ghcr.io/hspaans/molecule-containers:amazonlinux-2023"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
   - name: debian-11
     image: "ghcr.io/hspaans/molecule-containers:debian-11"
     command: ""
@@ -24,6 +33,51 @@ platforms:
 
   - name: debian-12
     image: "ghcr.io/hspaans/molecule-containers:debian-12"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: oraclelinux-7
+    image: "ghcr.io/hspaans/molecule-containers:oraclelinux-7"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: oraclelinux-8
+    image: "ghcr.io/hspaans/molecule-containers:oraclelinux-8"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: oraclelinux-9
+    image: "ghcr.io/hspaans/molecule-containers:oraclelinux-9"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: rockylinux-8
+    image: "ghcr.io/hspaans/molecule-containers:rockylinux-8"
+    command: ""
+    cgroupns_mode: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    privileged: true
+    pre_build_image: true
+
+  - name: rockylinux-9
+    image: "ghcr.io/hspaans/molecule-containers:rockylinux-9"
     command: ""
     cgroupns_mode: host
     volumes:
