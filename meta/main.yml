@@ -6,7 +6,7 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 7.0.0
+  min_ansible_version: "2.15.0"
 
   platforms:
     - name: Debian
@@ -17,6 +17,21 @@ galaxy_info:
       versions:
         - focal
         - jammy
+    - name: Fedora
+      versions:
+        - "38"
+        - "39"
+    - name: OracleLinux
+      versions:
+        - "8.8"
+        - "9.2"
+    - name: Amazon Linux
+      versions:
+        - "2023"
+    - name: Rocky
+      versions:
+        - "8.8"
+        - "9.2"
 
   galaxy_tags:
     - sysadmin
