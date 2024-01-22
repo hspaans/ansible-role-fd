@@ -4,9 +4,21 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      GitHub-Actions:
+        patterns:
+          - "*"
+    assignees:
+      - "hspaans"
 
   - package-ecosystem: pip
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    groups:
+      Python:
+        patterns:
+          - "*"
+    assignees:
+      - "hspaans"
