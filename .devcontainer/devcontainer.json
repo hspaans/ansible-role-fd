@@ -4,8 +4,12 @@
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers-contrib/features/ansible:2": {},
-    "ghcr.io/devcontainers-contrib/features/flake8:2": {},
-    "ghcr.io/devcontainers-contrib/features/yamllint:2": {}
+    // "ghcr.io/devcontainers-contrib/features/flake8:2": {},
+    "ghcr.io/devcontainers-contrib/features/yamllint:2": {},
+    "ghcr.io/hspaans/devcontainer-features/ansible-lint:1": {},
+    "ghcr.io/hspaans/devcontainer-features/pytest:1": {
+      "plugins": "pytest-testinfra"
+    }
   },
   "customizations": {
     "vscode": {
@@ -23,6 +27,5 @@
       "ansible.python.interpreterPath": "/usr/local/bin/python",
       "python.formatting.provider": "none"
     }
-  },
-  "postCreateCommand": "pip install -r requirements.txt"
+  }
 }
