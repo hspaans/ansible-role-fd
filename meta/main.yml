@@ -26,14 +26,12 @@ galaxy_info:
         - "40"
     - name: OracleLinux
       versions:
-        - "8.8"
         - "9.2"
     - name: Amazon Linux
       versions:
         - "2023"
     - name: Rocky
       versions:
-        - "8.8"
         - "9.2"
 
   galaxy_tags:
