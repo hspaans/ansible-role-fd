@@ -6,9 +6,8 @@
         "ghcr.io/devcontainers-contrib/features/ansible:2": {},
         "ghcr.io/devcontainers-contrib/features/yamllint:2": {},
         "ghcr.io/hspaans/devcontainer-features/ansible-lint:1": {},
-        "ghcr.io/hspaans/devcontainer-features/pytest:1": {
-            "plugins": "pytest-testinfra"
-        }
+        "ghcr.io/hspaans/devcontainer-features/pytest:1": {},
+        "ghcr.io/hspaans/devcontainer-features/pymarkdownlnt:1": {}
     },
     "customizations": {
         "vscode": {
